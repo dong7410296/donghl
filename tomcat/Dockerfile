@@ -16,7 +16,5 @@ ENV PATH $TOMCAT_HOME/bin:$PATH
 RUN rm -rf $TOMCAT_HOME/webapps/ROOT
 RUN sed -i '1i\JAVA_OPTS="-Djava.security.egd=file:/dev/./urandom"' $TOMCAT_HOME/bin/catalina.sh
 
-COPY /code/sunday/sunday/target/sunday.war $TOMCAT_HOME/webapps/ROOT.war
-
 EXPOSE 8080
 CMD ["catalina.sh", "run"]
