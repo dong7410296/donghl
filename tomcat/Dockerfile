@@ -13,7 +13,6 @@ RUN tar zxvf apache-tomcat-8.5.16.tar.gz
 RUN mv apache-tomcat-8.5.16 tomcat
 ENV TOMCAT_HOME /soft/tomcat
 ENV PATH $TOMCAT_HOME/bin:$PATH
-RUN rm -rf $TOMCAT_HOME/webapps/ROOT
 RUN sed -i '1i\JAVA_OPTS="-Djava.security.egd=file:/dev/./urandom"' $TOMCAT_HOME/bin/catalina.sh
 
 EXPOSE 8080
